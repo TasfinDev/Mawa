@@ -12,7 +12,7 @@ const paragraphTexts = [
     "I love you ohhhuu 🐧"
 ];
 
-
+function laura(){console.log("laura")};
 function pressKey(num) {
     // মিউজিক ট্রিগার এবং নম্বর ইনপুট লগ
     
