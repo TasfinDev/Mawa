@@ -61,7 +61,7 @@ function switchScreen(fromId, toId) {
 
 function openGift(type) {
     viewedGifts.add(type);
-    switchScreen("gift-screen", gift-${type});
+    switchScreen("gift-screen", `gift-${type}`);
     
     if (type === 'camera') {
         startTypingEffect();
@@ -80,7 +80,7 @@ function startTypingEffect() {
     paragraphTexts.forEach((text, index) => {
         const p = document.createElement("p");
         p.innerHTML = text;
-        p.style.animationDelay = ${index * 2.5}s; 
+        p.style.animationDelay = `${index * 2.5}s`; 
         container.appendChild(p);
     });
 }
@@ -99,7 +99,7 @@ function showSlide(idx) {
     viewedSlides.add(idx);
     const counter = document.getElementById("gallery-counter");
     if (counter) {
-        counter.innerText = View all photos to unlock the surprise: (${viewedSlides.size}/6);
+        counter.innerText = `View all photos to unlock the surprise: (${viewedSlides.size}/6)`;
     }
     checkFinalUnlock();
 }
@@ -140,8 +140,8 @@ function moveNoButton() {
     if (!noBtn) return;
     const x = Math.random() * (window.innerWidth - 150);
     const y = Math.random() * (window.innerHeight - 80);
-    noBtn.style.left = ${x}px;
-    noBtn.style.top = ${y}px;
+    noBtn.style.left = `${x}px`;
+    noBtn.style.top = `${y}px`;
 }
 
 function celebrate() {
