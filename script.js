@@ -12,38 +12,9 @@ const paragraphTexts = [
     "I love you ohhhuu 🐧"
 ];
 
-function playMusicOnce() {
-    if (!musicStarted) {
-        const audio = document.getElementById("bg-music");
-        if (audio) {
-            audio.volume = 0.8;
-            audio.play().then(() => {
-                musicStarted = true;
-                const indicator = document.getElementById("music-indicator");
-                if (indicator) indicator.classList.add("playing");
-            }).catch(err => console.log("Music interaction waiting..."));
-        }
-    }
-}
-
-function toggleMusic() {
-    const audio = document.getElementById("bg-music");
-    const indicator = document.getElementById("music-indicator");
-    if (!audio || !indicator) return;
-    
-    if (audio.paused) {
-        audio.play();
-        indicator.classList.add("playing");
-    } else {
-        audio.pause();
-        indicator.classList.remove("playing");
-    }
-}
 
 function pressKey(num) {
     // মিউজিক ট্রিগার এবং নম্বর ইনপুট লগ
-    playMusicOnce();
-    console.log("Pressed key:", num); 
     
     if (currentPasscode.length < 4) {
         currentPasscode += num;
@@ -89,7 +60,6 @@ function switchScreen(fromId, toId) {
 }
 
 function openGift(type) {
-    playMusicOnce();
     viewedGifts.add(type);
     switchScreen("gift-screen", gift-${type});
     
